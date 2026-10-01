@@ -1,0 +1,10 @@
+{
+  "routes": [
+    { "path": "/", "title": "KSA SAFETY BOARD" },
+    { "path": "/admin/login", "title": "Admin sign in" },
+    { "path": "/admin", "title": "Command center" },
+    { "path": "/admin/notifications", "title": "Notifications" },
+    { "path": "/admin/settings", "title": "Settings" },
+    { "path": "/admin/print", "title": "Print preview" }
+  ]
+}
