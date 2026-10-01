@@ -42,6 +42,12 @@ pnpm test
 
 The canonical page route manifest is `public/manus-routes.json`. Route traceability is defined in `lib/route-registry.ts`.
 
+## Source and deployment
+
+GitHub is the source of truth: `cxckrom-arch/KSA-SAFETY-BOARD` on `main`. Vercel project `ksa-safety-board` is linked to that repository and deploys the production branch. Supabase is used for Auth, PostgreSQL, RLS, and migrations; no production data or credentials are sourced from local files.
+
+Production URL: <https://ksa-safety-board.vercel.app>
+
 ## Current release status
 
-**PARTIALLY CONNECTED:** Supabase project `vlrlmlwioccfbupsyymm` is connected and the foundation/RLS migrations are applied. Initial organization/member provisioning, live account/MFA verification, Vercel deployment, and production recovery checks remain pending.
+**DEPLOYED:** Supabase project `vlrlmlwioccfbupsyymm` is connected, the foundation/RLS migrations and organization membership are applied, and Vercel production is live from GitHub. Live Auth/MFA verification and production recovery checks remain pending.
