@@ -15,7 +15,7 @@ Safety Vision vertical slice: schema, RLS, route, and truthful command-center UI
 - Runtime `/api/health` reports `supabaseConfigured: true`; unauthenticated `/admin` correctly redirects to `/admin/login`.
 - Organization `ksa-safety-board` is provisioned and the existing Auth user is linked as `org_admin`.
 - Vercel project `ksa-safety-board` is linked to GitHub `cxckrom-arch/KSA-SAFETY-BOARD`, with Supabase public variables configured for all environments.
-- Production deployment is `READY` at `https://ksa-safety-board.vercel.app` from GitHub commit `f9051e9`.
+- Production deployment is `READY` at `https://ksa-safety-board.vercel.app` from GitHub commit `8ff630f`.
 
 ## In progress
 
