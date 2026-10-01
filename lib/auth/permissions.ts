@@ -13,13 +13,13 @@ export const roles = [
 export type Role = (typeof roles)[number];
 
 const rolePermissions: Record<Role, readonly Permission[]> = {
-  platform_owner: ["dashboard.view", "notifications.read", "settings.read", "reports.print", "vision.dashboard.view", "vision.devices.view", "vision.cameras.view"],
-  org_admin: ["dashboard.view", "notifications.read", "settings.read", "reports.print", "vision.dashboard.view", "vision.devices.view", "vision.cameras.view"],
-  safety_manager: ["dashboard.view", "notifications.read", "reports.print", "vision.dashboard.view", "vision.devices.view", "vision.cameras.view"],
-  safety_officer: ["dashboard.view", "notifications.read", "reports.print", "vision.dashboard.view", "vision.devices.view", "vision.cameras.view"],
-  supervisor: ["dashboard.view", "notifications.read", "vision.dashboard.view", "vision.devices.view", "vision.cameras.view"],
+  platform_owner: ["dashboard.view", "notifications.read", "settings.read", "reports.print", "vision.dashboard.view", "vision.devices.view", "vision.cameras.view", "vision.alerts.read"],
+  org_admin: ["dashboard.view", "notifications.read", "settings.read", "reports.print", "vision.dashboard.view", "vision.devices.view", "vision.cameras.view", "vision.alerts.read"],
+  safety_manager: ["dashboard.view", "notifications.read", "reports.print", "vision.dashboard.view", "vision.devices.view", "vision.cameras.view", "vision.alerts.read"],
+  safety_officer: ["dashboard.view", "notifications.read", "reports.print", "vision.dashboard.view", "vision.devices.view", "vision.cameras.view", "vision.alerts.read"],
+  supervisor: ["dashboard.view", "notifications.read", "vision.dashboard.view", "vision.devices.view", "vision.cameras.view", "vision.alerts.read"],
   employee: ["dashboard.view", "notifications.read"],
-  viewer: ["dashboard.view", "reports.print", "vision.dashboard.view", "vision.devices.view", "vision.cameras.view"],
+  viewer: ["dashboard.view", "reports.print", "vision.dashboard.view", "vision.devices.view", "vision.cameras.view", "vision.alerts.read"],
 };
 
 export function roleCan(role: Role | null | undefined, permission: Permission) {

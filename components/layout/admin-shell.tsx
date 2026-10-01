@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import {
+  AlertTriangle,
   Bell,
   Camera,
   ChevronLeft,
@@ -26,7 +27,7 @@ import { useTheme } from "@/components/providers/theme-provider";
 import { getSupabaseBrowserClient } from "@/lib/supabase/browser";
 import { cn } from "@/lib/utils";
 
-const icons = { "layout-dashboard": LayoutDashboard, "scan-eye": ScanEye, server: Server, camera: Camera, bell: Bell, settings: Settings, printer: Printer };
+const icons = { "layout-dashboard": LayoutDashboard, "scan-eye": ScanEye, server: Server, camera: Camera, "triangle-alert": AlertTriangle, bell: Bell, settings: Settings, printer: Printer };
 
 export function AdminShell({ children, userEmail }: { children: React.ReactNode; userEmail?: string | null }) {
   const pathname = usePathname();

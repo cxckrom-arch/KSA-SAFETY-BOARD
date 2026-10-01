@@ -2,7 +2,7 @@
 
 ## Current phase
 
-Safety Vision management slice: schema, RLS, command center, camera directory, and ESP device directory.
+Safety Vision management slice: schema, RLS, command center, camera directory, ESP device directory, and read-only alert center.
 
 ## Completed
 
@@ -29,6 +29,7 @@ Safety Vision management slice: schema, RLS, command center, camera directory, a
 - Vision schema is present with RLS enabled on devices, cameras, alerts, recordings, restricted zones, rules, and audit logs. There are currently zero Vision records, so the UI intentionally shows empty/unknown states.
 - Vision source connectivity is not yet configured: no ESP device, camera, browser-compatible WebRTC/HLS gateway, AI processor, or recording backend is claimed as live.
 - Read-only `/admin/vision/devices` and `/admin/vision/cameras` directories now query the live Supabase tables with bounded selects and explicit empty/error/unknown health states; no registration or stream playback is claimed.
+- Read-only `/admin/vision/alerts` now queries `vision_alerts` with camera relation metadata, severity/status/confidence/source fields, and an explicit boundary: acknowledgement, review, resolve, and false-positive actions require a later audited state-machine workflow.
 - Supabase security advisor warns that `public.is_org_member` is a SECURITY DEFINER function executable by authenticated users; this is a known pre-existing/shared-foundation hardening item and should be moved to a private schema or otherwise restricted after validating policy behavior.
 
 ## Verification policy

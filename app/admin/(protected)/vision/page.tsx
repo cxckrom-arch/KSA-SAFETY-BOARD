@@ -96,6 +96,7 @@ export default async function SafetyVisionPage() {
         <Panel>
           <div className="panel-header"><div><h2>مسارات Vision</h2><p>أدلة القراءة متاحة؛ إجراءات التسجيل والتشغيل تحتاج provisioning معتمد</p></div></div>
           <div className="vision-link-list">
+            <Link href={"/admin/vision/alerts" as never}><ShieldAlert size={17} /><span>Alert center</span><StatusBadge tone="info">Implemented</StatusBadge></Link>
             <Link href={"/admin/vision/cameras" as never}><Camera size={17} /><span>Camera directory</span><StatusBadge tone="info">Implemented</StatusBadge></Link>
             <Link href={"/admin/vision/devices" as never}><Cpu size={17} /><span>ESP devices</span><StatusBadge tone="info">Implemented</StatusBadge></Link>
             <div><Map size={17} /><span>Facility map & zones</span><StatusBadge tone="neutral">Planned</StatusBadge></div>

@@ -6,17 +6,18 @@ export type Permission =
   | "reports.print"
   | "vision.dashboard.view"
   | "vision.devices.view"
-  | "vision.cameras.view";
+  | "vision.cameras.view"
+  | "vision.alerts.read";
 
 export type RouteRegistryEntry = {
-  path: "/admin" | "/admin/vision" | "/admin/vision/devices" | "/admin/vision/cameras" | "/admin/notifications" | "/admin/settings" | "/admin/print";
+  path: "/admin" | "/admin/vision" | "/admin/vision/devices" | "/admin/vision/cameras" | "/admin/vision/alerts" | "/admin/notifications" | "/admin/settings" | "/admin/print";
   title: string;
   eyebrow: string;
   description: string;
   permission: Permission;
   resource: string;
   sidebar: boolean;
-  iconName: "layout-dashboard" | "scan-eye" | "server" | "camera" | "bell" | "settings" | "printer";
+  iconName: "layout-dashboard" | "scan-eye" | "server" | "camera" | "triangle-alert" | "bell" | "settings" | "printer";
 };
 
 export const routeRegistry: readonly RouteRegistryEntry[] = [
@@ -59,6 +60,16 @@ export const routeRegistry: readonly RouteRegistryEntry[] = [
     resource: "vision_cameras",
     sidebar: false,
     iconName: "camera",
+  },
+  {
+    path: "/admin/vision/alerts",
+    title: "تنبيهات Vision",
+    eyebrow: "VISION ALERTS",
+    description: "سجل التنبيهات المرئية مع المصدر والشدة والثقة والحالة.",
+    permission: "vision.alerts.read",
+    resource: "vision_alerts",
+    sidebar: false,
+    iconName: "triangle-alert",
   },
   {
     path: "/admin/notifications",

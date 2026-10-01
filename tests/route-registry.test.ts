@@ -21,5 +21,6 @@ describe("route registry", () => {
     }));
     expect(routeRegistry).toContainEqual(expect.objectContaining({ path: "/admin/vision/devices", permission: "vision.devices.view", resource: "vision_devices" }));
     expect(routeRegistry).toContainEqual(expect.objectContaining({ path: "/admin/vision/cameras", permission: "vision.cameras.view", resource: "vision_cameras" }));
+    expect(routeRegistry).toContainEqual(expect.objectContaining({ path: "/admin/vision/alerts", permission: "vision.alerts.read", resource: "vision_alerts" }));
   });
 });
