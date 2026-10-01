@@ -27,7 +27,7 @@ The app does not provide a demo/fake login when these values are absent. It rend
 
 ## Database
 
-Apply `supabase/migrations/202610010001_architecture_foundation.sql` to the intended Supabase project using the Supabase CLI or dashboard migration workflow. Do not run destructive migrations against production without a backup and rollback plan.
+Apply `supabase/migrations/202610010001_architecture_foundation.sql` and `supabase/migrations/20261001150800_security_hardening.sql` to the intended Supabase project using the Supabase CLI or dashboard migration workflow. The KSA SAFETY BOARD Supabase project is already connected in the current environment and both migrations are applied. Do not run destructive migrations against production without a backup and rollback plan.
 
 ## Checks
 
@@ -44,4 +44,4 @@ The canonical page route manifest is `public/manus-routes.json`. Route traceabil
 
 ## Current release status
 
-**NOT READY:** the code foundation is being built, but no Supabase project or Vercel team/project is currently connected to this task. Live auth, RLS, persistence, deployment, and production recovery checks remain pending.
+**PARTIALLY CONNECTED:** Supabase project `vlrlmlwioccfbupsyymm` is connected and the foundation/RLS migrations are applied. Initial organization/member provisioning, live account/MFA verification, Vercel deployment, and production recovery checks remain pending.
