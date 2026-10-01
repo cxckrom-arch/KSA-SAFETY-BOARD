@@ -12,6 +12,7 @@ import {
   Moon,
   Printer,
   Search,
+  ScanEye,
   Settings,
   ShieldCheck,
   Sun,
@@ -23,7 +24,7 @@ import { useTheme } from "@/components/providers/theme-provider";
 import { getSupabaseBrowserClient } from "@/lib/supabase/browser";
 import { cn } from "@/lib/utils";
 
-const icons = { "layout-dashboard": LayoutDashboard, bell: Bell, settings: Settings, printer: Printer };
+const icons = { "layout-dashboard": LayoutDashboard, "scan-eye": ScanEye, bell: Bell, settings: Settings, printer: Printer };
 
 export function AdminShell({ children, userEmail }: { children: React.ReactNode; userEmail?: string | null }) {
   const pathname = usePathname();
@@ -67,7 +68,7 @@ export function AdminShell({ children, userEmail }: { children: React.ReactNode;
             return (
               <Link
                 key={item.path}
-                href={item.path}
+                href={item.path as never}
                 className={cn("nav-item", active && "nav-item-active")}
                 aria-current={active ? "page" : undefined}
                 onClick={() => setDrawerOpen(false)}
@@ -128,7 +129,7 @@ function SearchOverlay({ onClose }: { onClose: () => void }) {
 
   const go = (path: RouteRegistryEntry["path"]) => {
     onClose();
-    router.push(path);
+    router.push(path as never);
   };
 
   return (

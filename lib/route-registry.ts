@@ -3,17 +3,18 @@ export type Permission =
   | "dashboard.view"
   | "notifications.read"
   | "settings.read"
-  | "reports.print";
+  | "reports.print"
+  | "vision.dashboard.view";
 
 export type RouteRegistryEntry = {
-  path: "/admin" | "/admin/notifications" | "/admin/settings" | "/admin/print";
+  path: "/admin" | "/admin/vision" | "/admin/notifications" | "/admin/settings" | "/admin/print";
   title: string;
   eyebrow: string;
   description: string;
   permission: Permission;
   resource: string;
   sidebar: boolean;
-  iconName: "layout-dashboard" | "bell" | "settings" | "printer";
+  iconName: "layout-dashboard" | "scan-eye" | "bell" | "settings" | "printer";
 };
 
 export const routeRegistry: readonly RouteRegistryEntry[] = [
@@ -26,6 +27,16 @@ export const routeRegistry: readonly RouteRegistryEntry[] = [
     resource: "dashboard",
     sidebar: true,
     iconName: "layout-dashboard",
+  },
+  {
+    path: "/admin/vision",
+    title: "الرؤية التشغيلية",
+    eyebrow: "SAFETY VISION",
+    description: "حالة الكاميرات والأجهزة والتنبيهات المرئية دون ادعاء بث غير متصل.",
+    permission: "vision.dashboard.view",
+    resource: "vision_dashboard",
+    sidebar: true,
+    iconName: "scan-eye",
   },
   {
     path: "/admin/notifications",

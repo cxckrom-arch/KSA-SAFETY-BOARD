@@ -13,13 +13,13 @@ export const roles = [
 export type Role = (typeof roles)[number];
 
 const rolePermissions: Record<Role, readonly Permission[]> = {
-  platform_owner: ["dashboard.view", "notifications.read", "settings.read", "reports.print"],
-  org_admin: ["dashboard.view", "notifications.read", "settings.read", "reports.print"],
-  safety_manager: ["dashboard.view", "notifications.read", "reports.print"],
-  safety_officer: ["dashboard.view", "notifications.read", "reports.print"],
-  supervisor: ["dashboard.view", "notifications.read"],
+  platform_owner: ["dashboard.view", "notifications.read", "settings.read", "reports.print", "vision.dashboard.view"],
+  org_admin: ["dashboard.view", "notifications.read", "settings.read", "reports.print", "vision.dashboard.view"],
+  safety_manager: ["dashboard.view", "notifications.read", "reports.print", "vision.dashboard.view"],
+  safety_officer: ["dashboard.view", "notifications.read", "reports.print", "vision.dashboard.view"],
+  supervisor: ["dashboard.view", "notifications.read", "vision.dashboard.view"],
   employee: ["dashboard.view", "notifications.read"],
-  viewer: ["dashboard.view", "reports.print"],
+  viewer: ["dashboard.view", "reports.print", "vision.dashboard.view"],
 };
 
 export function roleCan(role: Role | null | undefined, permission: Permission) {

@@ -2,7 +2,7 @@
 
 ## Current phase
 
-Architecture-first foundation.
+Safety Vision vertical slice: schema, RLS, route, and truthful command-center UI.
 
 ## Completed
 
@@ -26,7 +26,10 @@ Architecture-first foundation.
 - Live Auth/MFA sign-in still needs to be exercised using the existing user's credentials; no password was read or changed by the agent.
 - Krom Forge MCP discovery timed out twice; no Krom Forge tool was available to call during this phase.
 - Supabase Auth leaked-password protection remains disabled; enable it under Auth password security before production use.
+- Vision schema is present with RLS enabled on devices, cameras, alerts, recordings, restricted zones, rules, and audit logs. There are currently zero Vision records, so the UI intentionally shows empty/unknown states.
+- Vision source connectivity is not yet configured: no ESP device, camera, browser-compatible WebRTC/HLS gateway, AI processor, or recording backend is claimed as live.
+- Supabase security advisor warns that `public.is_org_member` is a SECURITY DEFINER function executable by authenticated users; this is a known pre-existing/shared-foundation hardening item and should be moved to a private schema or otherwise restricted after validating policy behavior.
 
 ## Verification policy
 
-Supabase schema, organization membership, Vercel deployment, and production health are verified, but final status cannot be READY until live Auth/MFA is tested with the existing account and production recovery checks are run.
+The Safety Vision source/build/test/runtime/schema/RLS gates are verified for the implemented slice. Overall release remains READY WITH GAPS: live Auth/MFA, Vercel recovery, Vision device/gateway integration, real alert persistence, and the shared SECURITY DEFINER advisor warning remain unverified or unresolved.

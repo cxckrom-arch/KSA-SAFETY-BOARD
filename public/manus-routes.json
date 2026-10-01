@@ -3,6 +3,7 @@
     { "path": "/", "title": "KSA SAFETY BOARD" },
     { "path": "/admin/login", "title": "Admin sign in" },
     { "path": "/admin", "title": "Command center" },
+    { "path": "/admin/vision", "title": "Safety Vision" },
     { "path": "/admin/notifications", "title": "Notifications" },
     { "path": "/admin/settings", "title": "Settings" },
     { "path": "/admin/print", "title": "Print preview" }

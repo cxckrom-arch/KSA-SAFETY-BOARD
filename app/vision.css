@@ -1,0 +1,34 @@
+.vision-status-strip { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin: -8px 0 18px; padding: 14px 18px; border-inline-start: 3px solid var(--amber); background: var(--surface); border-block: 1px solid var(--line); }
+.vision-status-strip strong, .vision-status-strip span { display: block; }
+.vision-status-strip strong { margin-top: 4px; font-size: 13px; }
+.vision-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 18px; }
+.vision-metric { display: flex; align-items: flex-start; gap: 13px; min-height: 112px; padding: 17px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); box-shadow: var(--shadow); }
+.vision-metric-icon { display: grid; place-items: center; width: 35px; height: 35px; border-radius: 9px; }
+.vision-info { color: var(--info); background: var(--info-soft); }
+.vision-warning { color: #815e11; background: var(--amber-soft); }
+.vision-danger { color: var(--danger); background: var(--danger-soft); }
+.vision-metric span, .vision-metric strong, .vision-metric small { display: block; }
+.vision-metric span { color: var(--ink-faint); font-size: 11px; }
+.vision-metric strong { margin-top: 3px; font-size: 28px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.vision-metric small { margin-top: 4px; color: var(--ink-soft); font-size: 11px; }
+.vision-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr); gap: 18px; }
+.vision-grid > :first-child { grid-row: span 2; }
+.vision-wall-empty { min-height: 340px; display: grid; place-items: center; align-content: center; padding: 40px 22px; border: 1px dashed var(--line-strong); border-radius: 12px; background: radial-gradient(circle at center, color-mix(in srgb, var(--surface-subtle) 65%, transparent), transparent 68%); text-align: center; }
+.vision-wall-empty > svg { color: var(--ink-faint); }
+.vision-wall-empty h3 { margin: 13px 0 4px; font-size: 17px; }
+.vision-wall-empty p { max-width: 470px; margin: 0; color: var(--ink-soft); font-size: 12px; }
+.vision-state-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 13px; margin-top: 20px; color: var(--ink-faint); font-size: 11px; }
+.vision-state-list span { display: inline-flex; align-items: center; gap: 5px; }
+.vision-dot { width: 7px; height: 7px; display: inline-block; border-radius: 50%; }
+.vision-dot-neutral { background: var(--ink-faint); }
+.vision-dot-warning { background: var(--amber); }
+.vision-dot-danger { background: var(--danger); }
+.vision-health-list, .vision-link-list { display: grid; gap: 1px; }
+.vision-health-list > div, .vision-link-list > div { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 43px; border-bottom: 1px solid var(--line); font-size: 12px; }
+.vision-health-list > div:last-child, .vision-link-list > div:last-child { border-bottom: 0; }
+.vision-health-list strong { color: var(--ink-faint); font-weight: 500; }
+.vision-link-list > div { justify-content: flex-start; }
+.vision-link-list svg { color: var(--amber); }
+.vision-link-list span { flex: 1; }
+@media (max-width: 900px) { .vision-grid { grid-template-columns: 1fr; } .vision-grid > :first-child { grid-row: auto; } }
+@media (max-width: 620px) { .vision-metrics { grid-template-columns: 1fr; } .vision-status-strip { align-items: flex-start; flex-direction: column; } .vision-wall-empty { min-height: 260px; } }

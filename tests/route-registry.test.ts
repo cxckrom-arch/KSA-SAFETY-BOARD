@@ -11,4 +11,13 @@ describe("route registry", () => {
     const paths = routeRegistry.map((route) => route.path);
     expect(new Set(paths).size).toBe(paths.length);
   });
+
+  it("registers Safety Vision with its protected resource and permission", () => {
+    expect(routeRegistry).toContainEqual(expect.objectContaining({
+      path: "/admin/vision",
+      permission: "vision.dashboard.view",
+      resource: "vision_dashboard",
+      sidebar: true,
+    }));
+  });
 });
