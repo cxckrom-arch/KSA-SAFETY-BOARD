@@ -21,8 +21,10 @@ Raw RTSP credentials and browser-incompatible stream URLs are not stored in or r
 - `/admin/vision` — Vision command center
 - Permission: `vision.dashboard.view`
 - Resource: `vision_dashboard`
+- `/admin/vision/devices` — read-only ESP/Edge device directory (`vision.devices.view`)
+- `/admin/vision/cameras` — read-only camera directory (`vision.cameras.view`)
 
-Future routes are planned but not exposed until implemented: camera wall, cameras, devices, alerts, map, rules, recordings, analytics, and audit log.
+Future routes are planned but not exposed until implemented: alert center, facility map, rules, recordings, analytics, and audit log. The camera and device directories are now implemented as truthful read-only slices.
 
 ## UI direction
 

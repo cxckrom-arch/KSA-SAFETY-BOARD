@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./accent.css";
 import "./vision.css";
+import "./vision-directory.css";
 import { LocaleProvider } from "@/components/providers/locale-provider";
 import { QueryProvider } from "@/components/providers/query-provider";
 import { ThemeProvider } from "@/components/providers/theme-provider";

@@ -4,17 +4,19 @@ export type Permission =
   | "notifications.read"
   | "settings.read"
   | "reports.print"
-  | "vision.dashboard.view";
+  | "vision.dashboard.view"
+  | "vision.devices.view"
+  | "vision.cameras.view";
 
 export type RouteRegistryEntry = {
-  path: "/admin" | "/admin/vision" | "/admin/notifications" | "/admin/settings" | "/admin/print";
+  path: "/admin" | "/admin/vision" | "/admin/vision/devices" | "/admin/vision/cameras" | "/admin/notifications" | "/admin/settings" | "/admin/print";
   title: string;
   eyebrow: string;
   description: string;
   permission: Permission;
   resource: string;
   sidebar: boolean;
-  iconName: "layout-dashboard" | "scan-eye" | "bell" | "settings" | "printer";
+  iconName: "layout-dashboard" | "scan-eye" | "server" | "camera" | "bell" | "settings" | "printer";
 };
 
 export const routeRegistry: readonly RouteRegistryEntry[] = [
@@ -37,6 +39,26 @@ export const routeRegistry: readonly RouteRegistryEntry[] = [
     resource: "vision_dashboard",
     sidebar: true,
     iconName: "scan-eye",
+  },
+  {
+    path: "/admin/vision/devices",
+    title: "أجهزة ESP",
+    eyebrow: "ESP DEVICES",
+    description: "دليل الأجهزة وحالتها وبيانات آخر نبضة دون كشف أسرار الجهاز.",
+    permission: "vision.devices.view",
+    resource: "vision_devices",
+    sidebar: false,
+    iconName: "server",
+  },
+  {
+    path: "/admin/vision/cameras",
+    title: "دليل الكاميرات",
+    eyebrow: "CAMERA DIRECTORY",
+    description: "بيانات الكاميرات وصحة الشبكة والبث والتحليلات بشكل منفصل.",
+    permission: "vision.cameras.view",
+    resource: "vision_cameras",
+    sidebar: false,
+    iconName: "camera",
   },
   {
     path: "/admin/notifications",

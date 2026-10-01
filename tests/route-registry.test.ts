@@ -19,5 +19,7 @@ describe("route registry", () => {
       resource: "vision_dashboard",
       sidebar: true,
     }));
+    expect(routeRegistry).toContainEqual(expect.objectContaining({ path: "/admin/vision/devices", permission: "vision.devices.view", resource: "vision_devices" }));
+    expect(routeRegistry).toContainEqual(expect.objectContaining({ path: "/admin/vision/cameras", permission: "vision.cameras.view", resource: "vision_cameras" }));
   });
 });

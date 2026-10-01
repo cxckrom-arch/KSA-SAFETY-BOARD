@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import {
   Bell,
+  Camera,
   ChevronLeft,
   ChevronRight,
   LayoutDashboard,
@@ -13,6 +14,7 @@ import {
   Printer,
   Search,
   ScanEye,
+  Server,
   Settings,
   ShieldCheck,
   Sun,
@@ -24,7 +26,7 @@ import { useTheme } from "@/components/providers/theme-provider";
 import { getSupabaseBrowserClient } from "@/lib/supabase/browser";
 import { cn } from "@/lib/utils";
 
-const icons = { "layout-dashboard": LayoutDashboard, "scan-eye": ScanEye, bell: Bell, settings: Settings, printer: Printer };
+const icons = { "layout-dashboard": LayoutDashboard, "scan-eye": ScanEye, server: Server, camera: Camera, bell: Bell, settings: Settings, printer: Printer };
 
 export function AdminShell({ children, userEmail }: { children: React.ReactNode; userEmail?: string | null }) {
   const pathname = usePathname();
