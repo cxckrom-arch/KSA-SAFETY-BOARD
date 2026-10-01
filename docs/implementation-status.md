@@ -13,6 +13,7 @@ Architecture-first foundation.
 - Live Supabase project `vlrlmlwioccfbupsyymm` (`KSA SAFETY BOARD`) is connected locally through ignored `.env.local`.
 - `architecture_foundation` and `security_hardening` migrations are applied; eight foundation tables and RLS policies were verified through Supabase.
 - Runtime `/api/health` reports `supabaseConfigured: true`; unauthenticated `/admin` correctly redirects to `/admin/login`.
+- Organization `ksa-safety-board` is provisioned and the existing Auth user is linked as `org_admin`.
 
 ## In progress
 
@@ -20,11 +21,11 @@ Architecture-first foundation.
 
 ## Blockers / external prerequisites
 
-- Supabase project is connected, but it has no initial organization or user/member record yet.
+- Live Auth/MFA sign-in still needs to be exercised using the existing user's credentials; no password was read or changed by the agent.
 - Vercel tool currently returns no teams or linked Git projects for the authenticated account.
 - Krom Forge MCP discovery timed out twice; no Krom Forge tool was available to call during this phase.
 - Supabase Auth leaked-password protection remains disabled; enable it under Auth password security before production use.
 
 ## Verification policy
 
-Supabase schema and local runtime connectivity are verified, but final status cannot be READY until an initial organization/member is provisioned, live Auth/MFA is tested with a real account, Vercel deployment is connected, and production recovery checks are run.
+Supabase schema, organization membership, and local runtime connectivity are verified, but final status cannot be READY until live Auth/MFA is tested with the existing account, Vercel deployment is connected, and production recovery checks are run.
